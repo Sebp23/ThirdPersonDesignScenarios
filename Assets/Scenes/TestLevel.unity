@@ -155,7 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d64e8eb604a0944ab8e6c81e927ae65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Longer message duration
+  message: Longer message duration but its also a very lengthy message so we can
+    test long messages heeeeeeee
   messageDuration: 5
 --- !u!114 &58603347
 MonoBehaviour:
@@ -4137,7 +4138,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711802956}
-  m_LocalRotation: {x: -0.040850185, y: 0.9482259, z: 0.13645582, w: 0.28386414}
+  m_LocalRotation: {x: -0.04085018, y: 0.9482259, z: 0.13645582, w: 0.2838641}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
