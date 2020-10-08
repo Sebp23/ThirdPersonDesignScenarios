@@ -15,8 +15,6 @@ public class ContextualMessageController : MonoBehaviour
 
         //invisible
         canvasGroup.alpha = 0;
-
-        StartCoroutine(ShowMessage("TESTING", 2));
     }
 
     private IEnumerator ShowMessage(string message, float duration)
@@ -27,5 +25,21 @@ public class ContextualMessageController : MonoBehaviour
         //wait for duration
         yield return new WaitForSeconds(duration);
         canvasGroup.alpha = 0;
+    }
+
+    private void OnContextualMessageTriggered()
+    {
+        StartCoroutine(ShowMessage("TESTING", 2));
+    }
+
+    //subscribe
+    private void OnEnable()
+    {
+        ContextualMessageTrigger.ContextualMessageTriggered += OnContextualMessageTriggered;
+    }
+    //unsubscribe
+    private void OnDisable()
+    {
+        ContextualMessageTrigger.ContextualMessageTriggered -= OnContextualMessageTriggered;
     }
 }
