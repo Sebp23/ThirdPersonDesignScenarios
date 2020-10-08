@@ -1,13 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ContextualMessageTrigger : MonoBehaviour
 {
-    //delegate is a special type that defines a variable that can store a function to be used later (like when an event happens :O)
-    public delegate void ContextualMessageTriggeredAction();
+    [SerializeField]
+    private string message = "Default message";
 
-    public static event ContextualMessageTriggeredAction ContextualMessageTriggered;
+    [SerializeField]
+    private float messageDuration = 1.0f;
+
+    public static event Action<string, float> ContextualMessageTriggered;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,7 +19,7 @@ public class ContextualMessageTrigger : MonoBehaviour
         {
             if (ContextualMessageTriggered != null)
             {
-                ContextualMessageTriggered.Invoke();
+                ContextualMessageTriggered.Invoke(message, messageDuration);
             }
         }
     }
