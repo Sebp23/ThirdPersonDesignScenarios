@@ -55,6 +55,6 @@ public class RigidbodyCharacterController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        input= context.ReadValue<Vector2>();
+        input = context.ReadValue<Vector2>();
     }
 }
